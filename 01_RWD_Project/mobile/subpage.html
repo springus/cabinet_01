@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CABINET</title>
+  <link rel="stylesheet" href="/mobile/css/reset.css">
+  <link rel="stylesheet" href="/mobile/css/common.css">
+  <link rel="stylesheet" href="/mobile/css/main.css">
+  <link rel="stylesheet" href="/mobile/css/sub.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+  <script src="/mobile/js/main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        },
+      });
+    })
+  </script>
+  <script>
+    let deviceWidth = null
+    let pathName = window.location.pathname
+    let mobilePath = pathName.slice(8)
+    
+    // alert(mobilePath)
+
+    window.addEventListener('resize', () => {
+      deviceWidth = window.innerWidth;
+      if (deviceWidth > 768) {
+        // document.location.replace("http://dbstjd.dothome.co.kr")     
+        // document.location.replace(`http://127.0.0.1:5500/cabinet${mobilePath}`)
+        document.location.replace(`http://127.0.0.1:5502/${mobilePath}`)
+      }
+
+    })
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 id="logo"><a href='/'>CABINET</a></h1>
+    <p id="menu_icon"><i class="fa-solid fa-bars"></i></p>
+    <nav id="gnb">
+      <h2 class="hidden">전체메뉴</h2>
+      <div id="gnb_wrap">
+        <p>환영합니다.</p>
+        <span id="close_btn"><i class="fa-solid fa-xmark"></i></span>
+        <ul id="gnb_login">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+        </ul>
+        <ul id=gnb_inner>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p id="user_icon" class="header_icon"><i class="fa-regular fa-user"></i></p>
+    <p id="gift_icon" class="header_icon"><i class="fa-solid fa-gift"></i></p>
+    <p id="box_icon" class="header_icon"><i class="fa-solid fa-box-archive"></i></p>
+  </header>
+  <main>
+    <div id="search_box">
+      <form id="search" action="#" method="get">
+        <input type="text" placeholder="우리는 모든것의 주인이기를 원한다">
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </form>
+    </div>
+    <section id="my_cabinet">
+      <h2>내 캐비넷</h2>
+      <div id="storage_img">
+        <img src="/mobile/images/mycabinet_img01.png" alt="책제목"><span class="page_num">(3/8)</span>
+      </div>
+      <ul id="books_inner">
+        <li>도서 정보</li>
+        <li>작가 정보</li>
+        <li># 출판사</li>
+        <li># 중고책</li>
+      </ul>
+      <div id="books_comment">
+        <p class="comment_title">장르</p>
+        <p class="comment_text">국내도서 > 소설 > 외국소설 > 기타외국소설</p>
+        <p class="comment_title">책 소개</p>
+        <p class="comment_text"> 2021년 부커상 수상작
+          네 번의 장례식과 30년의 몰락,
+          그리고 작지만 소중한 한 번의 약속“새로운 형식의 실험,
+          독창적이고 유연한 목소리.읽을 때마다 책이 자라나는 듯했다.”
+          - 마야 자사노프(부커상 심사위원장)</p>
+        <p class="comment_title">목차</p>
+        <p class="comment_text">1. 엄마</p>
+        <p class="comment_text">2. 아빠</p>
+        <p class="comment_text">3. 아스트리드</p>
+        <span class="comment_open"><a href="#">펼쳐보기<i class="fa-solid fa-arrow-down"></i></a></span>
+      </div>
+      <div id="smart_button">
+        <span id="books_storage">캐비넷 보관</span>
+        <span id="books_gift">선물하기</span>
+        <span id="books_buy">구매하기</span>
+      </div>
+    </section>
+    <div id="books_rank">
+      <div id="rank_left">
+        <p class="rank_title">베스트 셀러 순위</p>
+        <ul id="rank_list">
+          <li>1. 세이노의 가르침</li>
+          <li>2. 사장학개론</li>
+          <li>3. 모든 삶은 흐른다</li>
+          <li>4. 이끼숲</li>
+          <li>5. 약속</li>
+          <li>6. 형태의 기원</li>
+          <li>7. 바다가 들리는 편의점</li>
+        </ul>
+      </div>
+      <div id="rank_right">
+        <p class="rank_title">급상승 도서</p>
+        <a href="#"><img src="./images/article_img01.png" alt="책제목"></a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <ul id="footer_inform">
+      <li><a href="#">이용약관</a></li>
+      <li><a href="#">개인정보처리방침</a></li>
+      <li><a href="#">제휴문의</a></li>
+      <li><a href="#">광고문의</a></li>
+      <li><a href="#">고객센터</a></li>
+    </ul>
+    <ul id="footer_adress">
+      <li>서울특별시 강남구 테헤란로 장연빌딩</li>
+      <li>대표전화 010-0000-0000</li>
+      <li>상호 : CABINET</li>
+      <li>대표 : 신윤성</li>
+    </ul>
+    <ul id="footer_number">
+      <li>사업자등록번호 000-0000-0000</li>
+      <li>판매업신고 0000-0000</li>
+    </ul>
+  </footer>
+
+
+</body>
+
+</html>

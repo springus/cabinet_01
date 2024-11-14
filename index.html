@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CABINET</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/commen.js"></script>
+  <script src="/js/visual.js"></script>
+  <!-- <script src="/js/banner.js"></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
+  <script>
+    var ua = window.navigator.userAgent.toLowerCase();
+    var deviceWidth = null;
+    let pathName=window.location.pathname
+    let mobilePath=pathName.slice(1)
+
+    if (/iphone/.test(ua) || /android/.test(ua) || /opera/.test(ua) || /bada/.test(ua) || /ipad/.test(ua) || /windows ce/.test(ua)) {
+      // document.location.replace("http://dbstjd.dothome.co.kr/mobile");
+      // document.location.replace(`http://127.0.0.1:5500/mobile${mobilePath}`);
+      document.location.replace(`http://127.0.0.1:5502/mobile/${mobilePath}`)
+    } else {
+      window.addEventListener('resize', () => {
+
+        deviceWidth = window.innerWidth;
+
+        if (deviceWidth <= 768) {
+          // document.location.replace("http://dbstjd.dothome.co.kr/mobile")
+          document.location.replace(`http://127.0.0.1:5502/mobile/${mobilePath}`)
+        }
+
+      })
+
+    }
+  </script>
+</head>
+
+<body>
+  <!-- focus area start -->
+
+  <ul class="skipmenu_list">
+    <li><a href="#footer_wrap" class="hidden">본문내용바로가기</a></li>
+    <li><a href="#cabinet_box" class="hidden">메인메뉴바로가기</a></li>
+    <li><a href="#cabinet_store" class="hidden">하단콘텐츠바로가기</a></li>
+  </ul>
+
+  <!-- focus area end -->
+
+  <!-- header area start -->
+
+  <div id="header_wrap">
+    <header>
+      <div id="header_top">
+        <ul id="header_top_inner">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">마이페이지</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </div>
+      <div id="header_mid">
+        <h1 id="logo"><a href="/">CABINET</a></h1>
+        <div id="search_box">
+          <form id="search" action="#" method="get">
+            <input type="text" placeholder="검색할 단어를 입력하세요.">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </form>
+        </div>
+      </div>
+      <nav id="gnb">
+        <h2 class="hidden">메인메뉴</h2>
+        <ul id="gnb_inner">
+          <li>
+            <a href="#">추천도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">신간도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">베스트도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">중고도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">이벤트</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">캐비넷</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">내 정보</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">서비스 안내</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <!-- header area end -->
+
+  <!-- container area start -->
+
+  <!-- visual area start -->
+
+  <div class="container_wrap">
+
+    <section id="visual_wrap">
+      <h2 class="hidden">상단배너</h2>
+      <ul id="visual_inner">
+        <li>
+          <article class="banner">
+            <h3 class="hidden">배너1</h3>
+            <p class="visual_title">오늘의 책을 소개 합니다.</p>
+            <p class="visual_text">책 제목 : # 세이노의 가르침</p>
+          </article>
+        </li>
+        <li>
+          <article class="banner">
+            <h3 class="hidden">배너2</h3>
+            <p class="visual_title">이달의 책을 소개 합니다.</p>
+            <p class="visual_text">책 제목 : # 디베이터</p>
+          </article>
+        </li>
+        <li>
+          <article class="banner">
+            <h3 class="hidden">배너3</h3>
+            <p class="visual_title">이번 주 출판사 News</p>
+            <p class="visual_text"> # 북로망스(출판사) : 2023. 06. 05. ooo 책 출간!</p>
+          </article>
+        </li>
+        <li>
+          <article class="banner">
+            <h3 class="hidden">배너4</h3>
+            <p class="visual_title">요즘 뜨고 있는 있는 책</p>
+            <p class="visual_text">책 제목 : # 세상의 마지막 기차역</p>
+          </article>
+        </li>
+        <li>
+          <article class="banner">
+            <h3 class="hidden">배너5</h3>
+            <p class="visual_title">오늘의 마인드셋</p>
+            <p class="visual_text">"도전하라 얻으리라"</p>
+          </article>
+        </li>
+      </ul>
+      <ul id="banner_dot">
+        <li class="selected"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <span id="prev_btn"><img src="/images/prev_btn.png" alt="이전보기"></span>
+      <span id="next_btn"><img src="/images/next_btn.png" alt="다음보기"></span>
+
+    </section>
+
+    <!-- visual area end -->
+
+    <!-- section area start -->
+
+    <section class="section_wrap">
+      <h2 class="hidden">오늘의 추천 도서</h2>
+      <section id="cabinet_box">
+        <h3 class="section_title">캐비넷 추천도서</h3>
+        <ul id="cabinet_inner">
+          <li><a href="/subpage.html"><img src="/images/bottom_img04.gif" alt="책제목"></a></li>
+          <li><a href="/subpage.html"><img src="/images/top_img01.gif" alt="책제목"></a></li>
+          <li><a href="/subpage.html"><img src="/images/top_img02.gif" alt="책제목"></a></li>
+          <li><a href="/subpage.html"><img src="/images/top_img03.gif" alt="책제목"></a></li>
+          <li><a href="/subpage.html"><img src="/images/bottom_img02.gif" alt="책제목"></a></li>
+          <li><a href="/subpage.html"><img src="/images/bottom_img03.gif" alt="책제목"></a></li>
+        </ul>
+        <!-- <article id="rank_box">
+          <h3>베스트셀러</h3>
+          <ul id="rank_box_inner">
+            <li><a href="#">1. 바다가 들리는 편의점</a></li>
+            <li><a href="#">2. 디베이터</a></li>
+            <li><a href="#">3. 메리골드 마음 세탁소</a></li>
+            <li><a href="#">4. 세이노의 가르침</a></li>
+            <li><a href="#">5. 불편한 편의점</a></li>
+            <li><a href="#">6. 당신은 결국 무엇이든 해내는 사람</a></li>
+            <li><a href="#">7. 세상의 마지막 기차역</a></li>
+            <li><a href="#">8. 장하준의 경제학 레시피</a></li>
+            <li><a href="#">9. 기분이 태도가 되지 말자</a></li>
+            <li><a href="#">10. 프린키피아 Principia</a></li>
+          </ul>
+        </article> -->
+      </section>
+      <!-- <div id="publisher_box">
+        <h3 class="section_title">출판사 추천 도서</h3>
+        <ul id="section_bottom">
+          <li><a href="#"><img src="/images/bottom_img01.gif" alt="책제목"></a></li>
+          <li><a href="#"><img src="/images/bottom_img02.gif" alt="책제목"></a></li>
+          <li><a href="#"><img src="/images/bottom_img03.gif" alt="책제목"></a></li>
+          <li><a href="#"><img src="/images/bottom_img04.gif" alt="책제목"></a></li>
+        </ul>
+      </div> -->
+    </section>
+    <section class="section_wrap">
+      <h2 class="contents_title">AI 추천 테마</h2>
+      <ul id="contents_inner">
+        <li><a href="#">장 르</a>
+        <li><a href="#">작 가</a></li>
+        <li><a href="#">이월 상품</a></li>
+        <li><a href="#">중 고</a></li>
+      </ul>
+      <ul id="genre_list">
+        <li><a href="#"><img src="/images/contents_img01.gif" alt="책제목"></a></li>
+        <li><a href="#"><img src="/images/contents_img02.gif" alt="책제목"></a></li>
+        <li><a href="#"><img src="/images/contents_img03.gif" alt="책제목"></a></li>
+        <li><a href="#"><img src="/images/contents_img04.gif" alt="책제목"></a></li>
+      </ul>
+    </section>
+    <section id="cabinet_store">
+      <h2 class="contents_title">캐비넷 중고서점</h2>
+      <div id="connect_space">
+        <ul id="connect_list">
+          <li><a href="#">구매하기</a></li>
+          <li><a href="#">판매하기</a></li>
+        </ul>
+        <ul id="connect_buy">
+          <li>
+            <p class="user_img">
+              <img src="/images/user_img.gif" alt="유저이미지">
+            </p>
+            <p class="user_title">
+              ooo책 구매 원합니다.
+            </p>
+            <p class="user_date">
+              2023-00-00
+            </p>
+            <p class="user_price">희망가격 5,000</p>
+          </li>
+          <li>
+            <p class="user_img">
+              <img src="/images/user_img.gif" alt="유저이미지">
+            </p>
+            <p class="user_title">
+              ooo책 구매 원합니다.
+            </p>
+            <p class="user_date">
+              2023-00-00
+            </p>
+            <p class="user_price">희망가격 5,000</p>
+          </li>
+          <li>
+            <p class="user_img">
+              <img src="/images/user_img.gif" alt="유저이미지">
+            </p>
+            <p class="user_title">
+              ooo책 구매 원합니다.
+            </p>
+            <p class="user_date">
+              2023-00-00
+            </p>
+            <p class="user_price">희망가격 5,000</p>
+          </li>
+          <li>
+            <p class="user_img">
+              <img src="/images/user_img.gif" alt="유저이미지">
+            </p>
+            <p class="user_title">
+              ooo책 구매 원합니다.
+            </p>
+            <p class="user_date">
+              2023-00-00
+            </p>
+            <p class="user_price">희망가격 5,000</p>
+          </li>
+          <li>
+            <p class="user_img">
+              <img src="/images/user_img.gif" alt="유저이미지">
+            </p>
+            <p class="user_title">
+              ooo책 구매 원합니다.
+            </p>
+            <p class="user_date">
+              2023-00-00
+            </p>
+            <p class="user_price">희망가격 5,000</p>
+          </li>
+        </ul>
+      </div>
+      <div id="connect_box">
+        <p>판매중인 중고책</p>
+        <ul id="connect_img">
+          <li><img src="/images/etc_img_01.gif">
+            <p>희망가격 5,000</p>
+          </li>
+          <li><img src="/images/etc_img_02.gif">
+            <p>희망가격 5,000</p>
+          </li>
+          <li><img src="/images/etc_img_03.gif">
+            <p>희망가격 5,000</p>
+          </li>
+          <li><img src="/images/etc_img_04.gif">
+            <p>희망가격 5,000</p>
+          </li>
+          <li><img src="/images/etc_img_05.gif">
+            <p>희망가격 5,000</p>
+          </li>
+          <li><img src="/images/etc_img_06.gif">
+            <p>희망가격 5,000</p>
+          </li>
+          <li><img src="/images/etc_img_07.gif">
+            <p>희망가격 5,000</p>
+          </li>
+          <li><img src="/images/etc_img_08.gif">
+            <p>희망가격 5,000</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <div id="footer_wrap">
+    <footer>
+      <ul id="footer_inform">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">제휴문의</a></li>
+        <li><a href="#">광고문의</a></li>
+        <li><a href="#">고객센터</a></li>
+      </ul>
+      <ul id="footer_adress">
+        <li>서울특별시 강남구 테헤란로 장연빌딩</li>
+        <li>대표전화 010-0000-0000</li>
+        <li>상호 : CABINET</li>
+        <li>대표 : 신윤성</li>
+      </ul>
+      <ul id="footer_number">
+        <li>사업자등록번호 000-0000-0000</li>
+        <li>판매업신고 0000-0000</li>
+      </ul>
+      <p>COPYRIGHT (C) CABINET CO., LTD. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </div>
+</body>
+
+</html>

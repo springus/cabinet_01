@@ -1,0 +1,335 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.hidden {
+  width: 1px;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+ul.skipmenu_list>li>a:focus {
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  background: black;
+  color: white;
+  z-index: 5;
+}
+
+div#header_wrap {
+  width: 100%;
+  height: 210px;
+  /* closeHeight:210px, openHeight:460px */
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 209px, rgba(255, 153, 0, 1) 210px, rgba(0, 0, 0, 0.8) 209px, rgba(0, 0, 0, 0.8) 100%);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 209px,  rgba(255, 153, 0, 1) 210px, rgba(0, 0, 0, 0.8) 209px, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 209px,  rgba(255, 153, 0, 1) 210px, rgba(0, 0, 0, 0.8) 209px, rgba(0, 0, 0, 0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+header {
+  width: 1400px;
+  height: 100%;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  margin: 0px auto;
+}
+
+div#header_top {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+ul#header_top_inner {
+  width: 360px;
+  height: 30px;
+  float: right;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font: normal 12px/30px "Noto Sans KR";
+  padding-right: 50px;
+  box-sizing: border-box;
+}
+
+ul#header_top_inner>li::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: black;
+  position: relative;
+  right: 16px;
+  top: -19px;
+}
+
+ul#header_top_inner>li:first-child::after {
+  background: none;
+}
+
+div#header_mid {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  padding-left: 150px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+h1#logo {
+  background: url(/images/logo1.png) no-repeat;
+  width: 140px;
+  height: 50px;
+  text-indent: -9999px;
+  float: left;
+  margin-right: 80px;
+  cursor:pointer;
+  position:relative;
+  left:0px;
+  top:0px;
+}
+
+h1#logo>a{
+  width:100%;
+  height:100%;
+  display:block;
+  position:absolute;
+  left:0px;
+  top:0px;
+
+}
+
+div#search_box {
+  width: 460px;
+  height: 50px;
+  float: left;
+}
+
+form#search {
+  width: 100%;
+  height: 100%;
+}
+
+form#search>input {
+  width: 410px;
+  height: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  text-indent: 10px;
+  border: solid 2px black;
+  float: left;
+}
+
+form#search>a {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background: black;
+  text-align: center;
+}
+
+form#search>a>i {
+  color: white;
+  line-height: 50px;
+}
+
+nav#gnb {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 150px;
+}
+
+ul#gnb_inner {
+  width: 100%;
+  height: 60px;
+}
+
+ul#gnb_inner>li {
+  width: 12.5%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+
+ul#gnb_inner>li>a {
+  font: bold 14px "Noto Sans KR";
+  line-height: 60px;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  transition: 0.3s ease-out;
+}
+
+ul#gnb_inner>li.selected a {
+  top: -10px;
+}
+
+ul#gnb_inner>li::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #ff9900;
+  position: absolute;
+  left: 0px;
+  top: 57px;
+  transform: scale(0, 1);
+  transition: 0.3s ease-out;
+}
+
+ul#gnb_inner>li.selected::after {
+  transform: scale(1, 1)
+}
+
+ul.gnb_sub {
+  width: 100%;
+  height: 250px;
+  transition: 0.3s ease-out;
+  padding-top: 20px;
+  box-sizing: border-box;
+  display: none;
+}
+
+ul#gnb_inner>li.selected ul.gnb_sub {
+  background: rgba(0, 0, 0, 0.8)
+}
+
+ul#gnb_sub>li.selected {
+  background: #4557C5;
+}
+
+ul.gnb_sub>li a {
+  font: normal 14px "Noto Sans KR";
+  line-height: 40px;
+  color: white;
+  opacity: 0.5;
+  transition: 0.2s ease-out;
+}
+
+ul.gnb_sub>li a:hover {
+  opacity: 1
+}
+
+div#footer_wrap {
+  width: 100%;
+  height: 200px;
+  background: #3c3c3c;
+  border-top: solid 1px #e7e7e7;
+  /* position:relative;
+  left:0px;
+  bottom:0px; */
+}
+
+footer {
+  width: 1400px;
+  height: 100%;
+  margin: 0px auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+
+ul#footer_inform {
+  width: 100%;
+  height: 30px;
+}
+
+ul#footer_inform>li>a {
+  font: normal 14px "Noto Sans KR";
+  text-align: left;
+  color: #ffffff;
+}
+
+ul#footer_inform>li {
+  width: auto;
+  height: 100%;
+  float: left;
+  margin-right: 20px;
+}
+
+ul#footer_inform>li::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: #ffffff;
+  position: relative;
+  right: 10px;
+  top: -15px;
+}
+
+ul#footer_inform>li:first-child::after {
+  background: none;
+}
+
+ul#footer_adress {
+  width: 100%;
+  height: 30px;
+}
+
+ul#footer_adress>li {
+  width: auto;
+  height: 100%;
+  float: left;
+  font: normal 14px/30px "Noto Sans KR";
+  color: #aaaaaa;
+  margin-right: 50px;
+}
+
+ul#footer_number {
+  width: 100%;
+  height: 30px;
+}
+
+ul#footer_number>li {
+  width: auto;
+  height: 100%;
+  float: left;
+  font: normal 14px/30px "Noto Sans KR";
+  color: #aaaaaa;
+}
+
+div#footer_wrap>p {
+  font: normal 4px "Noto Sans KR";
+  color: #aaaaaa;
+}
+
+@media screen and (max-width:1400px) {
+
+  header,
+  footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:980px) {
+  div#header_mid {
+    padding-left: 50px;
+    width:980px;
+  }
+}

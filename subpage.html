@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CABINET</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/sub.css">
+  <script src="/js/commen.js"></script>
+  <script src="/js/visual.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
+  <script>
+    let ua = window.navigator.userAgent.toLowerCase();
+    let deviceWidth = null;
+
+    let pathName = window.location.pathname
+    let mobilePath = pathName.slice(1)
+    let index = pathName.lastIndexOf("/")
+    // alert(mobilePath)
+
+    if (/iphone/.test(ua) || /android/.test(ua) || /opera/.test(ua) || /bada/.test(ua) || /ipad/.test(ua) || /windows ce/.test(ua)) {
+      // document.location.replace("http://dbstjd.dothome.co.kr/mobile")
+      // document.location.replace(`http://127.0.0.1:5500/mobile${mobilePath}`)
+      document.location.replace(`http://127.0.0.1:5502/mobile/${mobilePath}`)
+    } else {
+      window.addEventListener('resize', () => {
+
+        deviceWidth = window.innerWidth;
+
+        if (deviceWidth <= 768) {
+
+          // document.location.replace("http://dbstjd.dothome.co.kr/mobile")
+          // document.location.replace(`http://127.0.0.1:5500/mobile${mobilePath}`)
+          document.location.replace(`http://127.0.0.1:5502/mobile/${mobilePath}`)
+
+        }
+
+      })
+
+    }
+  </script>
+</head>
+
+<body>
+  <!-- sortcut area start -->
+  <ul class="skipmenu_list">
+    <li><a href="#" class="hidden">본문바로가기</a></li>
+    <li><a href="#" class="hidden">메인바로가기</a></li>
+    <li><a href="#" class="hidden">로그인하기</a></li>
+  </ul>
+  <!-- sortcut area end -->
+  <!-- header area start -->
+  <div id="header_wrap">
+    <header>
+      <div id="header_top">
+        <ul id="header_top_inner">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">마이페이지</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </div>
+      <div id="header_mid">
+        <h1 id="logo"><a href="/">CABINET</a></h1>
+        <div id="search_box">
+          <form id="search" action="#" method="get">
+            <input type="text" placeholder="검색할 단어를 입력하세요.">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </form>
+        </div>
+      </div>
+      <nav id="gnb">
+        <h2 class="hidden">메인메뉴</h2>
+        <ul id="gnb_inner">
+          <li>
+            <a href="#">추천도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">신간도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">베스트도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">중고도서</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">이벤트</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">캐비넷</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">내 정보</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">서비스 안내</a>
+            <ul class="gnb_sub">
+              <li><a href="#">sub</a></li>
+              <li><a href="#">sub</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <!-- header area end -->
+
+  <div class="container_wrap">
+    <section id="inner_part">
+      <h2 class="hidden">책정보</h2>
+      <ul id="inner_part_list">
+        <li>저 자 :
+          <a href="#">윤정은</a>
+        </li>
+        <li>장 르 :
+          <a href="#">한국소설</a>
+        </li>
+        <li>출판사 :
+          <a href="#">북로망스</a>
+        </li>
+        <li>발행일 : 2023.03.06 </li>
+      </ul>
+      <section id="look_book">
+        <h3 class="hidden">상세정보</h3>
+        <div id="book_detail">
+          <div id="look_img">
+            <img src="/images/subpage_book.png" alt="책제목">
+          </div>
+          <div id="look_center">
+            <p id="look_intro">마음에 묻은 얼룩을 마법처럼 지워드립니다
+              윤정은 작가 문학상 수상 11년 만의 첫 장편소설
+              한국형 힐링 소설의 결정판!</p>
+            <ul id="intro_inner">
+              <li>저자 : 윤정은</li>
+              <li>장르 : 한국소설</li>
+              <li>출판사 : 북로망스</li>
+              <li>발행일 : 2023.03.06.</li>
+            </ul>
+            <p id="book_review">마음의 상처를 살펴주는
+              언덕 위 신비로운 세탁소 이야기
+              저자 윤정은은 해와 달이 같은 하늘에 공존하듯, 슬픔과 기쁨이 결국엔 이어져 있음을 『메리골드 마음 세탁소』를 통해 이야기한다. 아픈 상처도 아름다운 꽃이 될 수 있음을, ‘밝은 슬픔’이
+              존재함을, 모든 것을 포기하고 싶은 그런 날에도 나를 다시 살게 하는 누군가의 격려와 믿음을 ‘마음 세탁소’라는 공간과 그곳을 오가는 사람들을 통해 보여준다. 『메리골드 마음 세탁소』 속
+              인물들의 가슴 아픈 사연에 함께 눈물 흘리기도, 꿋꿋하게 이겨내며 살아가는 모습에 가슴 찡함도 느끼며 지난 날의 선택과 상처들에 대해 진지하게 고민해볼 수 있는 소설이다.
+              책의 표지와 본문에 실린 일러스트는 컬러링북 『시간의 정원』의 저자인 송지혜 작가가 참여했다. 국내외 다양한 브랜드와의 협업으로 대중에게 큰 인기를 얻고 있는 송지혜 작가 특유의 섬세하고
+              신비로운 그림으로 소설의 분위기를 한층 살렸다. 처음 봤을 때 그 화려함에 이끌렸다면, 책을 읽은 뒤에 다시 한번 찬찬히 살펴보며 새로이 보이는 숨겨진 디테일들이 이 책을 읽는 또 다른
+              묘미이다. 소설을 읽기 전에는 알아채지 못한 비밀들을 하나씩 찾아내며 작품에 한층 더 깊게 몰입할 수 있을 것이다.</p>
+            </p>
+          </div>
+        </div>
+        <div id="look_price">
+          <dl id="look_info">
+            <dt id="look_title">메리골드 마음 세탁소</dt>
+            <dd id="look_kind">-한국소설</dd>
+            <dd id="look_text">우리는 가끔 시간을 되돌려 과거로 돌아가 후회됐던 일을 되돌리고 싶어한다. 그런데 과연 그 일을 지워버리는 게 현명한 선택일까? 그리고 그 기억을 지웠을 때
+              지금의 내가 있을 수 있을까? 만약 그 기억만 없다면 앞으로 행복만 할 수 있을까? 『메리골드 마음 세탁소』는 한밤중 언덕 위에 생겨난, 조금 수상하고도 신비로운 세탁소에서 벌어지는 일들을
+              그린
+              힐링 판타지 소설이다. 창백하게 하얀 얼굴에 젓가락처럼 마른 몸, 까맣고 구불구불 긴 머리의 미스테리한 여자는 세탁소를 찾아오는 누군가를 위해 매일같이 따뜻한 차를 끓인다. 차를 마신 이들은
+              어느 누구에게도 말하지 못했던 비밀스러운 이야기들을 자기도 모르게 그녀에게 털어놓는다. 아픈 날의 기억을 얼룩 지우듯 모조리 깨끗이 지워달라고 부탁한 사람들은 과연 세탁소를 나서며 행복해질
+              수
+              있을까?</dd>
+            <dd id="look_cost">
+              원가:18,000원
+              <a href="#"><span class="nego">네고하기<i class="fa-solid fa-arrow-right"></i></span></a>
+            </dd>
+          </dl>
+          <div id="calculate">
+            <!-- <p><a href="#"><span class="nego">네고하기<i class="fa-solid fa-arrow-right"></i></span></a></p> -->
+          </div>
+        </div>
+        <section id="keyword">
+          <h3 id="keyword_text">KEYWORD</h3>
+          <ul id="keword_inner">
+            <li><a href="#"><img src="/images/sub1.gif" alt="책제목"></a></li>
+            <li><a href="#"><img src="/images/sub2.gif" alt="책제목"></a></li>
+            <li><a href="#"><img src="/images/sub3.gif" alt="책제목"></a></li>
+            <li><a href="#"><img src="/images/sub4.gif" alt="책제목"></a></li>
+            <!-- <li><a href="#"><img src="/images/sub5.gif" alt="책제목"></a></li>
+            <li><a href="#"><img src="/images/sub6.gif" alt="책제목"></a></li> -->
+          </ul>
+        </section>
+        <section id="book_info">
+          <h3 class="hidden">이미지정보</h3>
+          <img src="/images/book_info.png" alt="책정보">
+        </section>
+      </section>
+  </div>
+
+  <div id="footer_wrap">
+    <footer>
+      <ul id="footer_inform">
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">제휴문의</a></li>
+        <li><a href="#">광고문의</a></li>
+        <li><a href="#">고객센터</a></li>
+      </ul>
+      <ul id="footer_adress">
+        <li>서울특별시 강남구 테헤란로 장연빌딩</li>
+        <li>대표전화 010-0000-0000</li>
+        <li>상호 : CABINET</li>
+        <li>대표 : 신윤성</li>
+      </ul>
+      <ul id="footer_number">
+        <li>사업자등록번호 000-0000-0000</li>
+        <li>판매업신고 0000-0000</li>
+      </ul>
+      <p>COPYRIGHT (C) CABINET CO., LTD. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </div>

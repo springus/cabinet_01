@@ -1,0 +1,296 @@
+.hidden {
+  width: 1px;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  background: #ff9800;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  margin-bottom: 2px;
+}
+
+h1#logo {
+  width: 160px;
+  height: 47px;
+  background: url(/mobile/images/mobile_logo1.png) no-repeat center;
+  text-indent: -9999px;
+  position: absolute;
+  left: 50%;
+  margin-left: -80px;
+  top: 50%;
+  margin-top: -23px;
+}
+
+h1#logo a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+p#menu_icon{
+  font-size: 36px;
+  line-height: 49px;
+  color: #ffffff;
+  position:absolute;
+  left:20;
+  top:0;
+}
+
+nav#gnb {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow:scroll;
+}
+
+div#gnb_wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index:5;
+  background: #ff9900;
+}
+
+div#gnb_wrap p {
+  width: 100%;
+  height: 150px;
+  padding: 50px;
+  box-sizing: border-box;
+  background: url(/mobile/images/gnbwrap_img.png) no-repeat;
+  background-size: cover;
+  font: bold 24px "Noto Sans KR";
+  text-align: center;
+}
+
+
+span#close_btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+span#close_btn>i{
+  font-size:32px;
+}
+
+ul#gnb_login {
+  width: 100%;
+  height: 50px;
+  background: white;
+}
+
+ul#gnb_login>li {
+  width: 50%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  border-right: solid 1px black;
+  box-sizing: border-box;
+}
+
+ul#gnb_login>li:last-child {
+  border-right: none;
+}
+
+ul#gnb_login>li>a{
+  font: bold 18px "Noto Sans KR";
+  line-height: 50px;
+  display:block;
+}
+
+
+ul#gnb_inner {
+  width: 100%;
+  height:300px;
+}
+
+ul#gnb_inner>li {
+  width: 100%;
+  height: 50px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: solid 1px white;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  overflow:hidden;
+}
+
+ul#gnb_inner>li>a {
+  font: normal 20px "Noto Sans KR";
+  color: white;
+  line-height: 50px;
+  display:block;
+}
+
+ul#gnb_inner>li:last-child {
+  border-bottom: none;
+
+}
+
+span.gnb_icon{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0px;
+  top: 12px;
+
+}
+
+span.gnb_icon i{
+  font-size:28px;
+  color: white;
+  cursor:pointer;
+  transition:0.3s ease-out;
+}
+
+span.gnb_icon.selected i{
+  transform: rotate(180deg);
+  transition:0.3s ease-out;
+}
+
+ul.gnb_list {
+  width: 100%;
+  height: 100%;
+  /* background:blue */
+}
+
+ul.gnb_list>li {
+  width: 100%;
+  height:50px;
+  font: normal 14px "Noto Sans KR";
+  line-height:50px;
+  text-indent:5px;
+  /* background:red; */
+}
+
+
+
+p#user_icon {
+  position: absolute;
+  left: 60px;
+  top: 0px;
+}
+
+p#gift_icon {
+  position: absolute;
+  right: 40px;
+  top: 0px;
+}
+
+p#box_icon {
+  position: absolute;
+  right: 0px;
+  top: 2px;
+}
+
+header .header_icon {
+  width: 50px;
+  height: auto;
+}
+
+header .header_icon i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #ffffff;
+}
+
+div#back_layer {
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+
+footer {
+  width: 100%;
+  height: 25vw;
+  border-top: solid 1px #e7e7e7;
+  background: #3c3c3c;
+}
+
+
+ul#footer_inform {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+ul#footer_inform>li::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: #ffffff;
+  position: relative;
+  right: 10px;
+  top: -12px;
+}
+
+ul#footer_inform>li:first-child::after {
+  background: none;
+}
+
+ul#footer_inform>li>a {
+  font: normal 3vw "Noto Sans KR";
+  text-align: left;
+  color: #ffffff;
+}
+
+ul#footer_adress {
+  width: 100%;
+  height: auto;
+  text-indent: 15px;
+}
+
+ul#footer_adress>li {
+  width: auto;
+  height: 100%;
+  float: left;
+  font: normal 3vw "Noto Sans KR";
+  color: #aaaaaa;
+}
+
+ul#footer_number {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+ul#footer_number>li {
+  width: auto;
+  height: 100%;
+  float: left;
+  text-indent: 20px;
+  font: normal 3vw "Noto Sans KR";
+  color: #aaaaaa;
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CABINET</title>
+  <link rel="stylesheet" href="/mobile/css/reset.css">
+  <link rel="stylesheet" href="/mobile/css/common.css">
+  <link rel="stylesheet" href="/mobile/css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+
+  <script>
+    let deviceWidth = null
+
+    window.addEventListener('resize', () => {
+      deviceWidth = window.innerWidth;
+      if (deviceWidth > 768) {
+        // document.location.replace("http://dbstjd.dothome.co.kr")  
+        document.location.replace("http://127.0.0.1:5502/index.html")
+
+      }
+
+    })
+  </script>
+
+  <script src="/mobile/js/main.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+          },
+        },
+      });
+    })
+  </script>
+
+
+</head>
+
+<body>
+  <header>
+    <h1 id="logo"><a href='/'>CABINET</a></h1>
+    <p id="menu_icon"><i class="fa-solid fa-bars"></i></p>
+    <nav id="gnb">
+      <h2 class="hidden">전체메뉴</h2>
+      <div id="gnb_wrap">
+        <p>환영합니다.</p>
+        <span id="close_btn"><i class="fa-solid fa-xmark"></i></span>
+        <ul id="gnb_login">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+        </ul>
+        <ul id=gnb_inner>
+          <li><a href="/">Home</a></li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+          <li><a href="#">main</a>
+            <span class="gnb_icon"><i class="fa-solid fa-angle-down"></i></span>
+            <ul class="gnb_list">
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+              <li><a href="#">Sub Menu Test Input Text..</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p id="user_icon" class="header_icon"><i class="fa-regular fa-user"></i></p>
+    <p id="gift_icon" class="header_icon"><i class="fa-solid fa-gift"></i></p>
+    <p id="box_icon" class="header_icon"><i class="fa-solid fa-box-archive"></i></p>
+  </header>
+
+  <main>
+    <section id="visual_wrap">
+      <h2 class="hidden">상단배너</h2>
+      <div class="swiper mySwiper">
+        <ul id="visual_list" class="swiper-wrapper">
+          <li class="swiper-slide"><img src="/mobile/images/jpg/mainVisual01.jpg" alt="책배너"></li>
+          <li class="swiper-slide"><img src="/mobile/images/jpg/mainVisual02.jpg" alt="책배너"></li>
+          <li class="swiper-slide"><img src="/mobile/images/jpg/mainVisual03.jpg" alt="책배너"></li>
+          <li class="swiper-slide"><img src="/mobile/images/jpg/mainVisual04.jpg" alt="책배너"></li>
+          <li class="swiper-slide"><img src="/mobile/images/jpg/mainVisual05.jpg" alt="책배너"></li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <section id="contents">
+      <h2 class="hidden">콘텐츠</h2>
+      <ul id="contents_list">
+        <li><a href='/mobile/subpage.html'>추천도서</a></li>
+        <li>베스트 셀러</li>
+        <li>출판사 소식</li>
+        <li>이벤트</li>
+      </ul>
+      <ul id="contents_inner">
+        <li><a href="/mobile/subpage.html">캐비넷 추천 보기</a></li>
+        <li><a href="/mobile/subpage.html">출판사 추천 보기</a></li>
+        <li><a href="/mobile/subpage.html">주간 추천 보기</a></li>
+      </ul>
+      <ul id="books_recommend">
+        <li>
+          <a href="/mobile/subpage.html">
+            <div class="high_cover">
+              <img src="/mobile/images/section_img01.png" alt="책제목">
+            </div>
+            <div class="low_cover">
+              <p class="cover_genre">장르: 인문 / 심리학</p>
+              <p class="cover_title">우리는 모든것의 주인이...</p>
+              <p class="cover_author">저자 : 브루스 후드</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/mobile/subpage.html">
+            <div class="high_cover">
+              <img src="/mobile/images/section_img02.png" alt="책제목">
+            </div>
+            <div class="low_cover">
+              <p class="cover_genre">장르: 인문 / 심리학</p>
+              <p class="cover_title">이토록 클래식이 끌리는...</p>
+              <p class="cover_author">저자 : 최지환</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="high_cover">
+              <img src="/mobile/images/section_img03.png" alt="책제목">
+            </div>
+            <div class="low_cover">
+              <p class="cover_genre">장르: 소설 / 한국소설</p>
+              <p class="cover_title">각각의 계절</p>
+              <p class="cover_author">저자 : 권여선</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="high_cover">
+              <img src="/mobile/images/section_img04.png" alt="책제목">
+            </div>
+            <div class="low_cover">
+              <p class="cover_genre">장르: 소설 / 한국소설</p>
+              <p class="cover_title">이끼숲</p>
+              <p class="cover_author">저자 : 천선란</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div id="books_rank">
+        <div id="rank_left">
+          <p class="rank_title">베스트 셀러 순위</p>
+          <ul id="rank_list">
+            <li>1. 세이노의 가르침</li>
+            <li>2. 사장학개론</li>
+            <li>3. 모든 삶은 흐른다</li>
+            <li>4. 이끼숲</li>
+            <li>5. 약속</li>
+            <li>6. 형태의 기원</li>
+            <li>7. 바다가 들리는 편의점</li>
+          </ul>
+        </div>
+        <div id="rank_right">
+          <p class="rank_title">급상승 도서</p>
+          <a href="#"><img src="/mobile/images/article_img01.png" alt="책제목"></a>
+        </div>
+      </div>
+      <div id="books_icon">
+        <p class="contents_title">분야별 도서 보기</p>
+        <ul id="icon_list">
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-dragon"></i>
+              <p>소설</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-rocket"></i>
+              <p>인문</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <p>교육</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-solid fa-language"></i>
+              <p>언어</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="used_books">
+        <p class="contents_title">캐비넷 중고 마켓</p>
+        <ul id="used_list">
+          <li>
+            <div id="used_left">
+              <a href="#"><img src="/mobile/images/contents_img01.png"></a>
+            </div>
+            <div id="used_right">
+              <p class="used_title">1984</p>
+              <p class="used_text">저자 : 조지 오웰<span>출판사 : 아르텔</span></p>
+              <p class="used_cost">원가 : 20,000원<span>중고 판매가 : 5,000원</span></p>
+              <p class="used_content">줄거리 펼쳐 보기<a href=#><i class="fa-solid fa-circle-down"></i></a></p>
+            </div>
+          </li>
+          <li>
+            <ul id="used_list">
+              <div id="used_left">
+                <a href="#"><img src="/mobile/images/contents_img02.png"></a>
+              </div>
+              <div id="used_right">
+                <p class="used_title">아주 위험한 과학책</p>
+                <p class="used_text">저자 : 맨들 먼로<span>출판사 : 시공사</span></p>
+                <p class="used_cost">원가 : 23,000원<span>중고 판매가 : 7,000원</span></p>
+                <p class="used_content">줄거리 펼쳐 보기<a href=#><i class="fa-solid fa-circle-down"></i></a></p>
+              </div>
+          </li>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <ul id="footer_inform">
+      <li><a href="#">이용약관</a></li>
+      <li><a href="#">개인정보처리방침</a></li>
+      <li><a href="#">제휴문의</a></li>
+      <li><a href="#">광고문의</a></li>
+      <li><a href="#">고객센터</a></li>
+    </ul>
+    <ul id="footer_adress">
+      <li>서울특별시 강남구 테헤란로 장연빌딩</li>
+      <li>대표전화 010-0000-0000</li>
+      <li>상호 : CABINET</li>
+      <li>대표 : 신윤성</li>
+    </ul>
+    <ul id="footer_number">
+      <li>사업자등록번호 000-0000-0000</li>
+      <li>판매업신고 0000-0000</li>
+    </ul>
+  </footer>
+
+
+</body>
+
+</html>
