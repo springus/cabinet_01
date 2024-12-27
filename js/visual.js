@@ -7,12 +7,13 @@ window.addEventListener('load', () => {
   const visualTitle = document.querySelectorAll('.visual_title')
   const visualText = document.querySelectorAll('.visual_text')
 
-  let visualWidth = visualWrap.offsetWidth
-  let visualLength = visualLi.length
-  let selectedDot = dot[0]
-  let currentIndex = 0
-  let nextIndex = null
-  let timer = setInterval(addVisualIndex, 4000)
+  let visualWidth = visualWrap.offsetWidth;
+  let visualLength = visualLi.length;
+  let selectedDot = dot[0];
+  let currentIndex = 0;
+  let nextIndex = null;
+  let timer = setInterval(addVisualIndex, 5000);
+  let isSelected = false;
 
   gsap.set(visualLi, { width: visualWidth, opacity: 0, scale: 2 })
   gsap.set(visualLi[0], { left: 0, opacity: 1, scale: 1 })
@@ -21,19 +22,32 @@ window.addEventListener('load', () => {
 
   window.addEventListener('resize', () => {
     visualWidth = visualWrap.offsetWidth
-    gsap.set(visualLi, {width:visualWidth})
+    gsap.set(visualLi, { width: visualWidth })
   })
 
   visualWrap.addEventListener('mouseenter', () => {
     clearInterval(timer)
+    timer = null;
+  })
+
+  visualWrap.addEventListener('mouseleave', () => {
+    if(!timer){
+      timer = setInterval(addVisualIndex, 5000)
+    }
   })
 
   for (item of dot) {
     item.addEventListener('mouseenter', overDot)
   }
 
-  nextBtn.addEventListener('click', addVisualIndex)
+  nextBtn.addEventListener('click', ()=>{
+    if (isSelected) return;
+    isSelected = true;
+    addVisualIndex()
+  })
   prevBtn.addEventListener('click', () => {
+    if(isSelected) return;
+    isSelected = true;
     nextIndex = currentIndex - 1
     if (nextIndex < 0) {
       nextIndex = visualLength - 1
@@ -46,11 +60,13 @@ window.addEventListener('load', () => {
     nextIndex = getIndex(this)
     // alert(nextIndex)
     activateDot(nextIndex)
+    
     if (nextIndex > currentIndex) {
       slideNextVisual(nextIndex)
     } else if (nextIndex < currentIndex) {
       slidePrevVisual(nextIndex)
     }
+    
   }
 
   function addVisualIndex() {
@@ -60,7 +76,7 @@ window.addEventListener('load', () => {
     }
     slideNextVisual(nextIndex)
     activateDot(nextIndex)
-    timer()
+    // timer()
   }
 
   function getIndex(checkMenu) {
@@ -83,16 +99,19 @@ window.addEventListener('load', () => {
   }
 
   function slideNextVisual(index) {
-    gsap.to(visualLi[currentIndex], { left: -visualWidth, opacity: 0, duration: 0.5, ease: "power1.out" })
+    isSelected = true;
+    gsap.to(visualLi[currentIndex], { left: -visualWidth, opacity: 0, duration: 1, ease: "power1.out" })
     gsap.set(visualTitle[currentIndex], { bottom: 0, opacity: 0 })
     gsap.set(visualText[currentIndex], { bottom: 0, opacity: 0 })
     gsap.set(visualLi[index], { left: visualWidth, opacity: 0, scale: 2 })
+    
     gsap.to(visualLi[index], {
-      left: 0, opacity: 1, duration: 0.5, ease: "power1.out", onComplete: () => {
+      left: 0, opacity: 1, duration: 1, ease: "power1.out", onComplete: () => {
         gsap.to(visualLi[index], {
-          scale: 1, duration: 0.5, ease: "power1.out", onComplet: () => {
-            gsap.to(visualTitle[index], { bottom: 160, opacity: 1, duration: 0.5, ease: "power1.out" })
+          scale: 1, duration: 0.5, ease: "power1.out", onComplete: () => {
+            gsap.to(visualTitle[index], { bottom: 160, opacity: 1, duration: 1, ease: "power1.out" })
             gsap.to(visualText[index], { bottom: 90, opacity: 1, duration: 1, ease: "power1.out" })
+            isSelected = false
           }
         })
       }
@@ -101,16 +120,19 @@ window.addEventListener('load', () => {
   }
 
   function slidePrevVisual(index) {
-    gsap.to(visualLi[currentIndex], { left: visualWidth, opacity: 0, duration: 0.5, ease: "power1.out" })
+    isSelected = true;
+    gsap.to(visualLi[currentIndex], { left: visualWidth, opacity: 0, duration: 1, ease: "power1.out" })
     gsap.set(visualTitle[currentIndex], { bottom: 0, opacity: 0 })
     gsap.set(visualText[currentIndex], { left: 0, opacity: 0 })
     gsap.set(visualLi[index], { left: -visualWidth, opacity: 0, scale: 2 })
+
     gsap.to(visualLi[index], {
-      left: 0, opacity: 1, duration: 0.5, ease: "power1.out", onComplete: () => {
+      left: 0, opacity: 1, duration: 1, ease: "power1.out", onComplete: () => {
         gsap.to(visualLi[index], {
-          scale: 1, duration: 0.5, ease: "power1.out", onComplete: () => {
-            gsap.to(visualTitle[index], { bottom: 160, opacity: 1, duration: 0.5, ease: "power1.out" })
+          scale: 1, duration: 1, ease: "power1.out", onComplete: () => {
+            gsap.to(visualTitle[index], { bottom: 160, opacity: 1, duration: 1, ease: "power1.out" })
             gsap.to(visualText[index], { bottom: 90, opacity: 1, duration: 1, ease: "power1.out" })
+            isSelected = false
           }
         })
       }

@@ -18,13 +18,15 @@
   <script>
     var ua = window.navigator.userAgent.toLowerCase();
     var deviceWidth = null;
-    let pathName=window.location.pathname
-    let mobilePath=pathName.slice(1)
+    let pathName = window.location.pathname
+    console.log(pathName)
+    let mobilePath = pathName.slice(1)
+    console.log(mobilePath)
 
     if (/iphone/.test(ua) || /android/.test(ua) || /opera/.test(ua) || /bada/.test(ua) || /ipad/.test(ua) || /windows ce/.test(ua)) {
       // document.location.replace("http://dbstjd.dothome.co.kr/mobile");
       // document.location.replace(`http://127.0.0.1:5500/mobile${mobilePath}`);
-      document.location.replace(`http://127.0.0.1:5502/mobile/${mobilePath}`)
+      document.location.replace(`https://cabinet01.netlify.app/mobile/${mobilePath}`)
     } else {
       window.addEventListener('resize', () => {
 
@@ -32,7 +34,7 @@
 
         if (deviceWidth <= 768) {
           // document.location.replace("http://dbstjd.dothome.co.kr/mobile")
-          document.location.replace(`http://127.0.0.1:5502/mobile/${mobilePath}`)
+          document.location.replace(`https://cabinet01.netlify.app/mobile/${mobilePath}`)
         }
 
       })
@@ -219,31 +221,7 @@
           <li><a href="/subpage.html"><img src="/images/bottom_img02.gif" alt="책제목"></a></li>
           <li><a href="/subpage.html"><img src="/images/bottom_img03.gif" alt="책제목"></a></li>
         </ul>
-        <!-- <article id="rank_box">
-          <h3>베스트셀러</h3>
-          <ul id="rank_box_inner">
-            <li><a href="#">1. 바다가 들리는 편의점</a></li>
-            <li><a href="#">2. 디베이터</a></li>
-            <li><a href="#">3. 메리골드 마음 세탁소</a></li>
-            <li><a href="#">4. 세이노의 가르침</a></li>
-            <li><a href="#">5. 불편한 편의점</a></li>
-            <li><a href="#">6. 당신은 결국 무엇이든 해내는 사람</a></li>
-            <li><a href="#">7. 세상의 마지막 기차역</a></li>
-            <li><a href="#">8. 장하준의 경제학 레시피</a></li>
-            <li><a href="#">9. 기분이 태도가 되지 말자</a></li>
-            <li><a href="#">10. 프린키피아 Principia</a></li>
-          </ul>
-        </article> -->
       </section>
-      <!-- <div id="publisher_box">
-        <h3 class="section_title">출판사 추천 도서</h3>
-        <ul id="section_bottom">
-          <li><a href="#"><img src="/images/bottom_img01.gif" alt="책제목"></a></li>
-          <li><a href="#"><img src="/images/bottom_img02.gif" alt="책제목"></a></li>
-          <li><a href="#"><img src="/images/bottom_img03.gif" alt="책제목"></a></li>
-          <li><a href="#"><img src="/images/bottom_img04.gif" alt="책제목"></a></li>
-        </ul>
-      </div> -->
     </section>
     <section class="section_wrap">
       <h2 class="contents_title">AI 추천 테마</h2>
